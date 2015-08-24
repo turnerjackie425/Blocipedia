@@ -1,2 +1,5 @@
-<h1><%= @wikis.title %></h1>
-<p><%= @wikis.body %></p>
+<h1><%= @wiki.title %></h1>
+
+<% if policy(@wiki).edit? %>
+  <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>
+<% end %>
