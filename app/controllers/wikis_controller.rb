@@ -1,16 +1,16 @@
 class WikisController < ApplicationController
   def index
-    set_wiki_params
-    @wiki = Wiki.visible_to(current_user)
+    @wiki = Wiki.all
     authorize @wiki
   end
 
   def show
-    set_wiki_params
-    authorize @wiki
+    @wikis = Wiki.find(params[:id])
+    authorize @wikis
   end
 
   def new
+    @wiki = Wiki.new
     authorize @wiki
   end
 
@@ -28,13 +28,13 @@ class WikisController < ApplicationController
   end
 
   def edit
-    set_wiki_params
+    @wikis = Wiki.find(params[:id])
     authorize @wiki
   end
 end
 
 def update
-  set_wiki_params
+  @wikis = Wiki.find(params[:id])
   authorize @wiki
   if @wikis.update_attributes(params.require(:wiki).permit(:title, :body))
     redirect_to @wikis
@@ -43,11 +43,7 @@ def update
     render :edit
   end
 
-private
 
-  def set_wiki_params
-    @wikis = Wiki.find(params[:id])
-  end
 end
 
 
