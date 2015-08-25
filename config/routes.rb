@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'charges/create'
-
   devise_for :users
 
   resources :wikis
@@ -9,7 +7,9 @@ Rails.application.routes.draw do
   
   get 'welcome/index'
 
-  get 'welcome/about'
+  get 'welcome/about' 
+
+  get 'charges/create'
 
   root to: 'welcome#index'
 end
