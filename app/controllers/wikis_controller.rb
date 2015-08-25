@@ -1,11 +1,12 @@
 class WikisController < ApplicationController
   def index
+    set_wiki_params
     @wiki = Wiki.visible_to(current_user)
     authorize @wiki
   end
 
   def show
-    @wiki = Wiki.find(params[:id])
+    set_wiki_params
     authorize @wiki
   end
 
@@ -27,19 +28,25 @@ class WikisController < ApplicationController
   end
 
   def edit
-    @wikis = Wikis.find(params[:id])
+    set_wiki_params
     authorize @wiki
   end
 end
 
 def update
-  @wikis = Wiki.find(params[:id])
+  set_wiki_params
   authorize @wiki
   if @wikis.update_attributes(params.require(:wiki).permit(:title, :body))
     redirect_to @wikis
   else
     flash[:error] = "There was an error saving the wiki. Please try again."
     render :edit
+  end
+
+private
+
+  def set_wiki_params
+    @wikis = Wiki.find(params[:id])
   end
 end
 
