@@ -1,3 +1,4 @@
+require 'stripe'
 #Store the enbiornment vairables on the Rails.configuration object
 Rails.configuration.stripe = {
   publishable_key: ENV['STRIPE_PUBLISHABLE_KEY'],
