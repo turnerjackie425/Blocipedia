@@ -1,3 +1,9 @@
 class Collaborator < ActiveRecord::Base
-  has
+  def collaborators_users
+    collaborator_user.where(collaborator_id: id)
+  end
+
+  def users
+   collaborators.users
+  end
 end
