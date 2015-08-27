@@ -41,8 +41,6 @@ def update
     flash[:error] = "There was an error saving the wiki. Please try again."
     render :edit
   end
-
-
 end
 
 
