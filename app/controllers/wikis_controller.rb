@@ -16,7 +16,7 @@ class WikisController < ApplicationController
   def create
     @wiki = Wiki.new(params.require(:wiki).permit(:title, :body))
     @wiki.user = current_user
-    authorize @wikis
+    authorize @wiki
     if @wiki.save
       flash[:notie] = "Wiki was saved!"
       redirect_to @wiki
@@ -28,21 +28,21 @@ class WikisController < ApplicationController
 
   def edit
     @wikis = Wiki.find(params[:id])
-    authorize @wiki
+    authorize @wikis
+  end
+
+
+  def update
+    @wikis = Wiki.find(params[:id])
+    authorize @wikis
+    if @wikis.update_attributes(params.require(:wiki).permit(:title, :body))
+      redirect_to @wikis
+    else
+      flash[:error] = "There was an error saving the wiki. Please try again."
+      render :edit
+    end
   end
 end
-
-def update
-  @wikis = Wiki.find(params[:id])
-  authorize @wiki
-  if @wikis.update_attributes(params.require(:wiki).permit(:title, :body))
-    redirect_to @wikis
-  else
-    flash[:error] = "There was an error saving the wiki. Please try again."
-    render :edit
-  end
-end
-
 
 
 

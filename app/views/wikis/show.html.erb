@@ -1,5 +1,11 @@
 <h1><%= markdown_to_html @wikis.title %></h1>
-
-<% if policy(@wikis).edit? %>
-  <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>
-<% end %>
+  <div class='form-group'>
+    <%= @wikis.body %>
+  </div>
+  <% if policy(@wikis).edit? %>
+    <div class="btn btn-small">
+      <%= link_to "Edit", edit_wiki_path, class: 'btn btn-small' %>
+    </div> 
+    <%= link_to "New Wiki", new_wiki_path  %>
+    <%= link_to "Wiki's list", wikis_path %>
+  <% end %>
