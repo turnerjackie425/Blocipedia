@@ -17,3 +17,10 @@
     position: center;
 }
 
+.wikis {
+  border: solid;
+  margin: 5px;
+  padding: 5px;
+  height: 100px;
+}
+
