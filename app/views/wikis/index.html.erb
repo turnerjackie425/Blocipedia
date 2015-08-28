@@ -1,13 +1,21 @@
 <h1>Wikis</h1>
+
 <% if policy(Wiki.new).create? %>
   <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
-<% end %>  
-<%= @wiki.each do |wiki| %>
-  <div class="media">
-    <div class="wiki">
-      <h4 class="media-heading">
-        <%= link_to wiki.title, wiki %>
-      </h4>
-    </div>
-  </div>
-<% end %>
+<% end %> 
+ 
+<table>
+  <tr>
+    <th>Wiki Title</th>
+    <th>Creation Date</th>
+    <th>User Name</th>
+  </tr>
+  <tr>
+    <td><%= @wikis %></td>
+    <td><%= @wikis.created_at %></td>
+    <td><%= @wikis.user %></td>
+  </tr>
+</table>
+
+
+
