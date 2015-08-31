@@ -1,12 +1,16 @@
 <br>
-  <div class="jumbotron">
-     <h1>Welcome to Blocipedia</h1>
-     <p>Where you can create and share Wikis!</p>
-  </div> 
-<p>Created by: Jackie</p>
-<p>
-  <%= link_to "View Wikis", wikis_path, class: 'btn btn-primary' %> or
-  <%= link_to "Create new Wiki", new_wiki_path, class: 'btn btn-primary' %> 
-</p>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Welcome to Blocipedia</h1>
+      <p>Where you can create and share Wikis!</p>
+       <p>Created by: Jackie</p>
+     </div> 
+    <p><%= link_to "Sign In", new_user_session_path %> to your account </p> or
+    <p><%= link_to "Sign Up", new_user_registration_path %> to start creating and sharing Wikis.</p>
+  </div>
+
+  <div class="nav nav-tabs">
+    <%= link_to "About", welcome_about_path %>
+  </div>
 
 

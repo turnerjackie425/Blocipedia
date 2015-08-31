@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :collaborators_users
   has_many :collaborators, through: :collaborators_users
+  has_many :roles
 
   def admin?
     role == 'admin'
