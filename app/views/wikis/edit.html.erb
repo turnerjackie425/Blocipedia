@@ -1,10 +1,14 @@
-<h1>Edit Wiki</h1>
+<div class="container">
+  <h1>Edit Wiki</h1>
  
-<%= render partial: "form" %>
+  <%= render partial: "form" %>
 
-<% if policy(@wiki).destroy? %>
-  <%= link_to "Delete Wiki", destroy_wiki_path, class: 'btn btn-danger', data: {confirm: 'Are  you sure you want to delete this wiki?' } %>
-<% end %>
+  <% if policy(@wikis).destroy? %>
+    <%= link_to "Delete Wiki",  @wikis, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are  you sure you want to delete this wiki?' } %><br>
+  <% end %>
 
-<%= link_to "New Wiki", new_wiki_path  %>
-<%= link_to "Wiki's list", wikis_path %>
+  <%= link_to "New Wiki", new_wiki_path  %><br>
+  <%= link_to "Wiki's list", wikis_path %><br>
+  <%= link_to "Blocipedia", root_path %><br>
+  <%= link_to "About", welcome_about_path %>
+</div>

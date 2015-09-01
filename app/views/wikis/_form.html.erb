@@ -1,28 +1,24 @@
-<%= form_for @wiki do |f| %>
+<%= form_for @wikis do |f| %>
   <% if current_user.present? %>
     <div class="row">
       <div class="col-md-8">
         <div class="form-group">
          <%= f.label :title %>
          <%= f.text_field :title, class: 'form-control', placeholder: "Enter wiki title" %>
-       </div>
+        </div>
        <div class="form-group">
          <%= f.label :body %>
          <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter wiki body" %>
-       </div> 
-    <div class="form-group">
-      <%= f.label :private, class: 'checkbox' do %>
-      <%= f.check_box :private %> Private Wiki
-    </div>
-    <div class="form-group">
-         <%= f.submit "Save", class: 'btn btn-success' %>
-      <% end %>
+      </div> 
+      <div class="form-group">
+        <%= f.label :private, class: 'checkbox' do %>
+        <%= f.check_box :private %> Private Wiki
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save", class: 'btn btn-success' %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class="nav nav-tabs">
-    <%= link_to "Blocipedia", root_path %><br>
-    <%= link_to "About", welcome_about_path %>
-  </div>
-</div>
-<% end %>
+  <% end %>
 <% end %>
