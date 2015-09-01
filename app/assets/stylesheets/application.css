@@ -1,13 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+h1 {
+  text-align: center;
+}
+
 body {
   height: 100%;
   background: -webkit-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:    -moz-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:     -ms-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:      -o-linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
-  background:         linear-gradient(40deg, #4CB8C4 10%, #EAECC6 100%);
   font-family: 'Lato', fantasy;
 }
 
@@ -36,13 +36,6 @@ body {
   height: 100px;
 }
 
-.table {
-    display: table;
-    border-collapse: separate;
-    border-spacing: 2px;
-    border-color: gray;
-}
-
  .container {
   width: 50%;
   max-width: 600px;
@@ -54,15 +47,5 @@ body {
   text-align: center;
 }
 
-.social-btn {
-  position: relative;
-  height: 20px;
-  width: 20px;
-  background-color: #4187FB;
-  border: solid;
-  border-color: #A736FB;
-  text-align: center;
-  width: 70px;
-  margin: 300px;
-}
+
 

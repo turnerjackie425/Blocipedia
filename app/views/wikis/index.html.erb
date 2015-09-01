@@ -1,7 +1,12 @@
 <div class="container">
   <h1>Wikis</h1>
+    <%= @wikis %>
 
-  <% if policy(Wiki.new).create? %>
-    <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
-  <% end %> 
+    <% if policy(Wiki.new).create? %>
+      <%= link_to "New Wiki", new_wiki_path %><br>
+    <% end %> 
+
+    <%= link_to "Blocipedia", root_path %><br>
+    <%= link_to "About", welcome_about_path %>
+</div>
  
