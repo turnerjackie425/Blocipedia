@@ -12,7 +12,7 @@ wikis = Wiki.all
 #Create an admin user
 admin = User.new(
   name: 'Admin User',
-  email: 'admin@example.com', 
+  email: 'admin_user@example.com', 
   password: 'helloworld', 
   role: 'admin'
   )
@@ -22,7 +22,7 @@ admin.save!
 #Create a premium user
 premium = User.new(
   name: 'Premium User',
-  email: 'premium@example.com',
+  email: 'premium_user@example.com',
   password: 'helloworld',
   role: 'premium'
   )
@@ -32,7 +32,7 @@ premium.save!
 #Create a standara(free) user
 standard = User.new(
   name: 'standard User',
-  email: 'standard@example.com',
+  email: 'standard_user@example.com',
   password: 'helloworld',
   role: 'standard'
   )
