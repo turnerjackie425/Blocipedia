@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :collaborators, through: :collaborators_users
   has_many :roles
 
+  scope :visible_to, -> { where(public: true) }
+
   def admin?
     role == 'admin'
   end

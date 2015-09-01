@@ -11,6 +11,11 @@ body {
   font-family: 'Lato', fantasy;
 }
 
+.row {
+  text-align: center;
+  padding: 10px;
+}
+
 .user-info {
   margin-top: 9px;
   text-align: right;
@@ -21,21 +26,6 @@ body {
   text-align: center;
 }
 
-.index {
-    margin-bottom: 0px;
-    background-position: 0% 25%;
-    background-size: cover;
-    color: blue;
-    position: center;
-}
-
-.wikis {
-  border: solid;
-  margin: 5px;
-  padding: 5px;
-  height: 100px;
-}
-
  .container {
   width: 50%;
   max-width: 600px;
@@ -43,7 +33,7 @@ body {
   margin: 3em auto 0 auto;
   border-radius: 7px;
   box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
-  padding: 1em 0;
+  padding: 1em;
   text-align: center;
 }
 

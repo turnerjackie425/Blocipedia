@@ -6,9 +6,8 @@
   <% if policy(@wikis).destroy? %>
     <%= link_to "Delete Wiki",  @wikis, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are  you sure you want to delete this wiki?' } %><br>
   <% end %>
-
-  <%= link_to "New Wiki", new_wiki_path  %><br>
-  <%= link_to "Wiki's list", wikis_path %><br>
-  <%= link_to "Blocipedia", root_path %><br>
-  <%= link_to "About", welcome_about_path %>
+  <div class="row">
+    <%= link_to "New Wiki", new_wiki_path  %>
+    <%= link_to "Wiki's list", wikis_path %>
+  </div>
 </div>
