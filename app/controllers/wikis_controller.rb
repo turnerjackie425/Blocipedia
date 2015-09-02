@@ -1,7 +1,6 @@
 class WikisController < ApplicationController
   def index
-    @wiki = policy_scope(Wiki)
-    @wiki = Wiki.paginate(page: params[:page], per_page:)
+    @wikis = Wiki.paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -28,16 +27,16 @@ class WikisController < ApplicationController
   end
 
   def edit
-    @wikis = Wiki.find(params[:id])
-    authorize @wikis
+    @wiki = Wiki.find(params[:id])
+    authorize @wiki
   end
 
 
   def update
-    @wikis = Wiki.find(params[:id])
-    authorize @wikis
-    if @wikis.update_attributes(params.require(:wiki).permit(:title, :body))
-      redirect_to @wikis
+    @wiki = Wiki.find(params[:id])
+    authorize @wiki
+    if @wiki.update_attributes(params.require(:wiki).permit(:title, :body))
+      redirect_to @wiki
     else
       flash[:error] = "There was an error saving the wiki. Please try again."
       render :edit
