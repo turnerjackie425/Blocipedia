@@ -41,7 +41,7 @@ standard.skip_confirmation!
 standard.save!
 
 User.find_or_initialize_by(
-  email: 'email').tap do |u|
+  email: 'email@example.com').tap do |u|
   u.password = 'password'
 end.save!
 
