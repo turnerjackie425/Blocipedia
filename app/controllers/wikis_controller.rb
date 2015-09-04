@@ -51,8 +51,9 @@ class WikisController < ApplicationController
       flash[:notice] = "\"#{@wikis.title}\" was deleted successfully."
     else
       flash[:error] = "There was an error deleting the wiki, please try again."
-      render :edit
+      return render :edit
     end
+    redirect_to wikis_path
   end
 end
 
