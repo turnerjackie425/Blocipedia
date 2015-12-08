@@ -1,20 +1,13 @@
 <div class="container">
   <h2><%= markdown_to_html @wikis.title %></h2>
+  
   <div class='form-group'>
     <%= @wikis.body %>
-    <% if policy(@wikis).edit? %>
-      <div>
-      <%= link_to "Edit", edit_wiki_path, class: 'btn btn-small' %>
-      </div> 
-    <% end %>
+  </div>   
     <br>
-    <%= link_to "New Wiki", new_wiki_path  %> <br>
-    <%= link_to "Wiki's list", wikis_path %><br>
-  </div>
+    <% if policy(@wikis).edit? %>
+      <%= link_to "Edit this Wiki", edit_wiki_path %> /
+      <%= link_to "Return to Wiki's list", wikis_path %><br>
+    <% end %>
 </div> 
-
-<div class="row">
-  <%= link_to "Blocipedia", root_path %>
-  <%= link_to "About", welcome_about_path %>
-</div>
 

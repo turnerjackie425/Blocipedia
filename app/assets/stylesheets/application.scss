@@ -28,6 +28,7 @@ body {
 .user-info {
   margin-top: 9px;
   text-align: right;
+  padding: 25px;
 }
 
 .nav {
@@ -38,7 +39,7 @@ body {
  .container {
   width: 50%;
   max-width: 600px;
-  background: $white_opaque;
+  background: white_opaque;
   margin: 3em auto 0 auto;
   border-radius: 7px;
   box-shadow: 0 0 4px 4px rgba(0,0,0,.03);

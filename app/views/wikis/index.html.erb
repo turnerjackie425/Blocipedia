@@ -1,12 +1,6 @@
 <div class="container">
   <h1>Wikis</h1>
 
-  <div class="pull-left">
-    <% if policy(Wiki.new).create? %>
-      <h2><%= link_to "New Wiki", new_wiki_path %></h2>
-    <% end %> 
-  </div>
-
   <% @wikis.each do |wiki| %>
     <div class="media">
       <div class="media-body">
@@ -18,9 +12,3 @@
   <% end %>
   <%= will_paginate @wikis %>
 </div>
-
-  <div class="row">
-    <%= link_to "Blocipedia", root_path %>
-    <%= link_to "About", welcome_about_path %>
-  </div>
- 

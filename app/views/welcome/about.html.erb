@@ -1,20 +1,11 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="form-group">
-        <h1>Welcome to Blocipedia</h1>
-        <p>Create as many public wikis as you want, sign up for a <%= link_to "standard membership", new_user_registration_path %>!</p>
-        <p>Create Private wikis, sign up for a <%= link_to "premium membership", new_charge_path %>!</p>
-      </div>
-    </div>
+  <div class="form-group">
+    <h1>Welcome to Blocipedia</h1>
+    <p>Create as many public wikis as you want, sign up for a <%= link_to "standard membership", new_user_registration_path %>!</p>
+    <p>Create Private wikis, sign up for a <%= link_to "premium membership", new_charge_path %>!</p>
+    <p><%= link_to "Home Page", root_path %></p>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-8">
-    <div class="nav nav-tabs">
-      <%= link_to "Blocipedia", root_path %>
-    </div>
-  </div>
-</div>
+
 
